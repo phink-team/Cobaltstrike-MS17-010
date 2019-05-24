@@ -9,7 +9,7 @@ popup beacon_bottom {
 	menu "&Pwn" {
 		item "ms17-010"{
 			$bid = $1;
-			$dialog = dialog("Ms17-010 Scan", %(ip => "192.168.1.1", grooms => "16", max_attempts => "5", bid => $bid, listener => 'listener'), &ms17_010);
+			$dialog = dialog("Ms17-010", %(ip => "192.168.1.1", grooms => "12", max_attempts => "5", bid => $bid, listener => 'listener'), &ms17_010);
 			drow_text($dialog, "ip",  "IP: "); 	
 			drow_listener($dialog, "listener", "Listener: ");
 			drow_text($dialog, "grooms",  "Grooms: ");
