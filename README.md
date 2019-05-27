@@ -2,7 +2,7 @@
 
 
 
-![](pic\2.png)
+![](https://github.com/phink-team/Cobaltstrike-MS17-010/blob/master/pic/2.png)
 
 
 
@@ -31,10 +31,17 @@ getinfo/Invoke-LoginPrompt.ps1 from [Empire](https://github.com/EmpireProject/Em
 
 Test Picture：
 
+![](https://github.com/phink-team/Cobaltstrike-MS17-010/blob/master/pic/1.png)
 
 
-![](pic\1.png)
+
+![](https://github.com/phink-team/Cobaltstrike-MS17-010/blob/master/pic/2.png)
 
 ![](pic\2.png)
 
-![](pic\3.png)
+![](https://github.com/phink-team/Cobaltstrike-MS17-010/blob/master/pic/3.png)
+
+
+
+![](https://github.com/phink-team/Cobaltstrike-MS17-010/blob/master/pic/4.png)
+
