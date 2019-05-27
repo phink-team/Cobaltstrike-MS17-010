@@ -8,7 +8,7 @@
 
 **ms17-010 exploit tool and scanner.**
 
-1. Download it to "modules" floder.
+1. Download files and merge them with  "modules"  folder.
 2. Import "pwndog.cna" and "getinfo.cna"
 
 
