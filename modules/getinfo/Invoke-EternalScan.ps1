@@ -222,25 +222,13 @@ namespace PingCastle.Scanners
 "@
 Add-Type -TypeDefinition $Source
 function attacking ($target2) {
-	try{
-		if ([PingCastle.Scanners.ms17_010scanner]::ScanForMs17_010($target2)) {
-			Write-Host "`n[+] IP: $target2 have MS17-010!"
-			}
-	}catch{
-		Write-Verbose ""
-	}
+try{
+	if ([PingCastle.Scanners.ms17_010scanner]::ScanForMs17_010($target2)) {
+		Write-Host "`n[+] IP: $target2 have MS17-010!"
+		}
+}catch{
+	Write-Verbose ""
 }
-
-$IPnet = $target.Split("-")[0].Split(".")[0]+"."+$target.Split("-")[0].Split(".")[1]+"."+$target.Split("-")[0].Split(".")[2]+"."
-$startIP0 = $target.Split("-")[0].Split(".")[3] -as [int]
-$endIP0 = $target.Split("-")[1] -as [int]
-if ($endIP0 -ne 0 ){
-	for ($startIP0;$startIP0 -le $endIP0;$startIP0++){
-		$targetIP = $IPnet+$startIP0 -as [string]
-		attacking $targetIP
-	}
-}else{
-	attacking $target
 }
 Write-Host "Scan Complet!"
 }
