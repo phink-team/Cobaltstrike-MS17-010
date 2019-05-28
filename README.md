@@ -8,8 +8,8 @@
 
 **ms17-010 exploit tool and scanner.**
 
-1. Download files and merge them with  "modules"  folder.
-2. Import "pwndog.cna" and "getinfo.cna"
+1. Download files in cobaltstrike's root folder.
+2. Import "aggressor.cna"
 
 
 
