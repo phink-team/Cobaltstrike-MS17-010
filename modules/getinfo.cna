@@ -1,6 +1,24 @@
 sub ms17_010_scan {
-	bpowershell_import!($bid, getFileProper(script_resource("modules/getinfo"), "Invoke-EternalScan.ps1"));
-    bpowerpick!($bid, 'EternalScan -target '.$3['ip']);
+	bpowershell_import($bid, getFileProper(script_resource("modules/getinfo"), "Invoke-EternalScan.ps1"));
+	$ip = split("-",$3['ip']);
+	if($ip[0] =~ @($3['ip'])[0]){
+		println("single");
+		bpowershell($bid, 'EternalScan -target '.$ip[0]);
+	}else{
+		println("double");
+		$start = split("\\.",$ip[0]);
+		$startIP = "$start[0]\.$start[1]\.$start[2]";
+	
+		$x = int($start[2]);
+		$y = int($ip[1]);
+		while ($x <= $y){
+			$target = "$startIP\.$x";
+			println($target);
+			$x = $x + 1;
+			bpowershell($bid, 'EternalScan -target '.$target);
+		}
+	}
+
 }
 
 sub login_prompt {
