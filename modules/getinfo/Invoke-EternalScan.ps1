@@ -221,7 +221,6 @@ namespace PingCastle.Scanners
 }
 "@
 Add-Type -TypeDefinition $Source
-function attacking ($target2) {
 try{
 	if ([PingCastle.Scanners.ms17_010scanner]::ScanForMs17_010($target2)) {
 		Write-Host "`n[+] IP: $target2 have MS17-010!"
@@ -229,6 +228,4 @@ try{
 }catch{
 	Write-Verbose ""
 }
-}
-Write-Host "Scan Complet!"
 }
